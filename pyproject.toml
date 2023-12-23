@@ -1,6 +1,6 @@
 [project]
 name = "ipush"
-version = "0.1.0"
+version = "0.1.1"
 description = "Push for python"
 authors = [
     { name = "Jetsung Chan", email = "jetsungchan@gmail.com" }
@@ -54,7 +54,7 @@ check = { cmd = "python -m ruff check . --fix" }
 allow-direct-references = true
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/push"]
+packages = ["src/ipush"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

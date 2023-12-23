@@ -1,7 +1,8 @@
 import os
 
 import pytest
-from src.ipush.notify.feishu import Feishu
+
+from ipush.notify.feishu import Feishu
 
 
 @pytest.fixture

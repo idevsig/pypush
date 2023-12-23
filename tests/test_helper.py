@@ -1,6 +1,6 @@
 from urllib.parse import unquote
 
-from src.ipush.utils.helper import signature
+from ipush.utils.helper import signature
 
 
 class TestHelper:

@@ -1,7 +1,8 @@
 import os
 
 import pytest
-from src.ipush.notify.dingtalk import Dingtalk
+
+from ipush.notify.dingtalk import Dingtalk
 
 
 @pytest.fixture

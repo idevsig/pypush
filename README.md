@@ -1,6 +1,31 @@
-# pypush
+# ipush
 
 APP 推送通知
+
+## 使用说明
+
+1. 安装依赖
+
+```shell
+pip install -U ipush
+```
+
+2. 创建 `notify` 对象，并发送消息
+
+```python
+from ipush.notify.dingtalk import Dingtalk
+from ipush.notify.feishu import Feishu
+from ipush.notify.lark import Lark
+
+notify = Dingtalk("token", "secret")
+notify.send("ipush test")
+
+notify = Feishu("token", "secret")
+notify.send("ipush test")
+
+notify = Lark("token", "secret")
+notify.send("ipush test")
+```
 
 ## 支持平台
 
@@ -26,3 +51,9 @@ python -m pytest
 # 打印测试报告
 python -m pytest -s
 ```
+
+## 仓库镜像
+
+- https://git.jetsung.com/idev/pypush
+- https://framagit.org/idev/pypush
+- https://github.com/idevsig/pypush

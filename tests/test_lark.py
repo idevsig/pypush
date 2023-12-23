@@ -1,7 +1,8 @@
 import os
 
 import pytest
-from src.ipush.notify.lark import Lark
+
+from ipush.notify.lark import Lark
 
 
 @pytest.fixture
