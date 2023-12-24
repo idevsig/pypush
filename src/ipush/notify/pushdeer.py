@@ -13,13 +13,13 @@ class PushDeer(Notify):
         self.token = token
         self.url = 'https://api2.pushdeer.com'
 
-    def signature(self):
+    def _signature(self):
         pass
 
     def seturl(self, url):
         self.url = url
 
-    def requrl(self):
+    def _geturl(self):
         """
         生成请求的 URL
         """
@@ -30,7 +30,7 @@ class PushDeer(Notify):
         发送通知
         :param message: 消息内容
         """
-        req_url = self.requrl()
+        req_url = self._geturl()
 
         headers = {
             'content-type': 'application/json',

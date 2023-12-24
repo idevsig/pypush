@@ -2,7 +2,15 @@
 
 ## 使用
 
-1. **钉钉群**
+### 1. 安装
+
+```python
+pip install ipush
+```
+
+### 2. 代码示例
+
+- **钉钉群**
 
 ```python
 from ipush.notify.dingtalk import Dingtalk
@@ -11,7 +19,7 @@ notify = Dingtalk("token", "secret")
 notify.send("ipush test")
 ```
 
-2. **飞书群**
+- **飞书群**
 
 ```python
 from ipush.notify.feishu import Feishu
@@ -20,7 +28,7 @@ notify = Feishu("token", "secret")
 notify.send("ipush test")
 ```
 
-3. **Lark 群**
+- **Lark 群**
 
 ```python
 from ipush.notify.lark import Lark
@@ -29,18 +37,18 @@ notify = Lark("token", "secret")
 notify.send("ipush test")
 ```
 
-4. **Bark**
+- **Bark**
 
 ```python
 from ipush.notify.bark import Bark
 
 notify = Bark("token")
-notify.send("ipush test")
+notify.send("ipush test", "title")
 notify.seturl("https://self-hosted")
 notify.send("ipush test custom url")
 ```
 
-5. **Chanify**
+- **Chanify**
 
 ```python
 from ipush.notify.chanify import Chanify
@@ -51,7 +59,7 @@ notify.seturl("https://self-hosted")
 notify.send("ipush test custom url")
 ```
 
-6. **PushDeer**
+- **PushDeer**
 
 ```python
 from ipush.notify.pushdeer import PushDeer
@@ -60,4 +68,31 @@ notify = PushDeer("token")
 notify.send("ipush test")
 notify.seturl("https://self-hosted")
 notify.send("ipush test custom url")
+```
+
+- **PushPlus**
+
+```python
+from ipush.notify.pushplus import PushPlus
+
+notify = PushPlus("token")
+notify.send("ipush test", "title")
+```
+
+- **Showdoc**
+
+```python
+from ipush.notify.showdoc import Showdoc
+
+notify = Showdoc("token")
+notify.send("ipush test", "title")
+```
+
+- **Xizhi**
+
+```python
+from ipush.notify.xizhi import Xizhi
+
+notify = Xizhi("token")
+notify.send("ipush test", "title")
 ```

@@ -22,6 +22,16 @@ def test_bark(access_token):
     assert json['code'] == 200
 
 
+@pytest.mark.skipif(not os.environ.get('BarkToken'), reason='Bark Token not provided')
+def test_bark_title(access_token):
+    token, _ = access_token
+    notify = Bark(token)
+    res = notify.send('pypush test', 'ipush')
+    assert res.status_code == 200
+    json = res.json()
+    assert json['code'] == 200
+
+
 @pytest.mark.skipif(
     not os.environ.get('BarkToken') or not os.environ.get('BarkCustomURL'),
     reason='Bark Token not provided',

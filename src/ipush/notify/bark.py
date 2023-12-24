@@ -13,24 +13,24 @@ class Bark(Notify):
         self.token = token
         self.url = 'https://api.day.app'
 
-    def signature(self):
+    def _signature(self):
         pass
 
     def seturl(self, url):
         self.url = url
 
-    def requrl(self):
+    def _geturl(self):
         """
         生成请求的 URL
         """
         return f'{self.url}/push'
 
-    def send(self, message):
+    def send(self, message, title=''):
         """
         发送通知
         :param message: 消息内容
         """
-        req_url = self.requrl()
+        req_url = self._geturl()
 
         headers = {
             'content-type': 'application/json',
@@ -39,6 +39,7 @@ class Bark(Notify):
         req.update_headers(headers)
 
         data = {
+            'title': '' if title == '' else title,
             'body': message,
             'device_key': self.token,
         }

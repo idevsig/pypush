@@ -8,7 +8,7 @@ Notify 推送通知
 
 class Notify(ABC):
     @abstractmethod
-    def signature(self):
+    def _signature(self):
         """
         签名
         """

@@ -15,7 +15,7 @@ class Lark(Notify):
         self.token = token
         self.secret = secret
 
-    def signature(self):
+    def _signature(self):
         """
         签名
         """
@@ -25,7 +25,7 @@ class Lark(Notify):
             '' if self.secret == '' else signature(self.secret, timestamp, 1),
         )
 
-    def requrl(self):
+    def _geturl(self):
         """
         生成请求的 URL
         """
@@ -36,8 +36,8 @@ class Lark(Notify):
         发送通知
         :param message: 消息内容
         """
-        timestamp, sign = self.signature()
-        req_url = self.requrl()
+        timestamp, sign = self._signature()
+        req_url = self._geturl()
 
         headers = {
             'content-type': 'application/json',

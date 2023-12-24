@@ -1,7 +1,7 @@
 [project]
 name = "ipush"
-version = "0.2.0"
-description = "Push for python"
+version = "0.3.0"
+description = "APP 推送通知。支持往 钉钉群、飞书群、Lark 群、Bark、Chanify、PushDeer、PushPlus、Showdoc、息知 推送消息。"
 authors = [
     { name = "Jetsung Chan", email = "jetsungchan@gmail.com" }
 ]
@@ -10,27 +10,34 @@ dependencies = [
     "lxml>=4.9.4",
 ]
 readme = "README.md"
+license ={ file = "LICENSE" }
+keywords = ["push", "notify", "dingtalk", "feishu", "lark", "bark", "chanify", "pushdeer", "pushplus", "showdoc", "xizhi"]
 requires-python = ">= 3.8"
 classifiers = [
     'Development Status :: 4 - Beta',
     'Environment :: Console',
+    'Environment :: Web Environment',
     'Intended Audience :: Developers',
     'License :: OSI Approved :: Apache Software License',
     'Natural Language :: Chinese (Simplified)',
     'Operating System :: OS Independent',
     'Programming Language :: Python',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.8',
     'Programming Language :: Python :: 3.8',
     'Programming Language :: Python :: 3.9',
     'Programming Language :: Python :: 3.10',
     'Programming Language :: Python :: 3.11',
     'Programming Language :: Python :: 3.12',
-    'Programming Language :: Python :: 3.13',
+    'Programming Language :: Python :: 3 :: Only',
+    'Programming Language :: Python :: Implementation :: CPython',
     'Topic :: Communications :: Email',
+    'Topic :: Software Development :: Libraries',
 ]
 [project.urls]
 Homepage = "https://git.jetsung.com/idev/pypush"
-Documentation = "https://framagit.org/idev/pypush"
-Repository = "https://framagit.org/idev/pypush.git"
+Documentation = "https://pypush.skiy.net/"
+Repository = "https://github.com/idevsig/pypush"
 
 [build-system]
 requires = ["hatchling"]

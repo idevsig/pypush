@@ -1,6 +1,6 @@
 # ipush
 
-APP 推送通知。支持往 **钉钉群、飞书群、Lark 群、Bark、Chanify、PushDeer** 推送消息。
+APP 推送通知。支持往 **钉钉群、飞书群、Lark 群、Bark、Chanify、PushDeer、PushPlus、Showdoc、息知** 推送消息。
 
 ## 使用说明
 
@@ -31,14 +31,18 @@ notify.send("ipush test")
 | ✔ **荐** | **Bark**          | [https://day.app/2021/06/barkfaq/](https://day.app/2021/06/barkfaq/)                                      | -    | 仅支持 `iOS` |
 | ✔        | **Chanify**       | [https://www.chanify.net/](https://www.chanify.net/)                                                      | -    | 仅支持 `iOS` |
 | ✔        | **PushDeer**      | https://www.pushdeer.com/                                                                                 | -    |              |
+| //       | //                | **基于微信公众号**                                                                                        | \\\\ | \\\\         |
+| ✔        | **PushPlus**      | [https://www.pushplus.plus/](https://www.pushplus.plus/doc)                                               | -    |              |
+| ✔        | **Showdoc**       | [https://push.showdoc.com.cn/](https://www.showdoc.com.cn/push)                                           | -    |              |
+| ✔        | **息知**          | [https://xz.qqoq.net/](https://xz.qqoq.net/)                                                              | -    |              |
 
 ## 开发
 
-### 前置环境
+### 1. 前置开发环境
 
 1. 使用 [**Rye**](https://rye-up.com/) 作为包管理工具
 
-### 开发
+### 2. 开发流程
 
 1. 安装依赖包：
 

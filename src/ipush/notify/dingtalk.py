@@ -15,7 +15,7 @@ class Dingtalk(Notify):
         self.token = token
         self.secret = secret
 
-    def signature(self):
+    def _signature(self):
         """
         签名
         """
@@ -25,7 +25,7 @@ class Dingtalk(Notify):
             '' if self.secret == '' else signature(self.secret, timestamp, 0),
         )
 
-    def requrl(self, sign):
+    def _geturl(self, sign):
         """
         生成请求的 URL
         :param sign: 签名
@@ -37,8 +37,8 @@ class Dingtalk(Notify):
         发送通知
         :param message: 消息内容
         """
-        timestamp, sign = self.signature()
-        req_url = self.requrl(
+        timestamp, sign = self._signature()
+        req_url = self._geturl(
             '' if self.secret == '' else f'&timestamp={timestamp}&sign={sign}'
         )
 
