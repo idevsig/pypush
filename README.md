@@ -1,10 +1,12 @@
 # ipush
 
-APP 推送通知
+APP 推送通知。支持往 **钉钉群、飞书群、Lark 群、Bark、Chanify、PushDeer** 推送消息。
 
 ## 使用说明
 
 1. 安装依赖
+
+- https://pypi.org/project/ipush/
 
 ```shell
 pip install -U ipush
@@ -14,32 +16,48 @@ pip install -U ipush
 
 ```python
 from ipush.notify.dingtalk import Dingtalk
-from ipush.notify.feishu import Feishu
-from ipush.notify.lark import Lark
 
 notify = Dingtalk("token", "secret")
-notify.send("ipush test")
-
-notify = Feishu("token", "secret")
-notify.send("ipush test")
-
-notify = Lark("token", "secret")
 notify.send("ipush test")
 ```
 
 ## 支持平台
 
-| 状态     | **国内**平台      | 官网                                                                                                      | 文档 | 备注 |
-| :------- | :---------------- | :-------------------------------------------------------------------------------------------------------- | :--- | :--- |
-| ✔ **荐** | **钉钉群机器人**  | [https://open.dingtalk.com/](https://open.dingtalk.com/document/robots/customize-robot-security-settings) | -    |      |
-| ✔ **荐** | **飞书群机器人**  | [https://open.feishu.cn/](https://open.feishu.cn/document/client-docs/bot-v3/add-custom-bot)              | -    |      |
-| ✔ **荐** | **Lark 群机器人** | [https://open.larksuite.com/](https://open.larksuite.com/document/client-docs/bot-v3/add-custom-bot)      | -    |      |
+| 状态     | **国内**平台      | 官网                                                                                                      | 文档 | 备注         |
+| :------- | :---------------- | :-------------------------------------------------------------------------------------------------------- | :--- | :----------- |
+| ✔ **荐** | **钉钉群机器人**  | [https://open.dingtalk.com/](https://open.dingtalk.com/document/robots/customize-robot-security-settings) | -    |              |
+| ✔ **荐** | **飞书群机器人**  | [https://open.feishu.cn/](https://open.feishu.cn/document/client-docs/bot-v3/add-custom-bot)              | -    |              |
+| ✔ **荐** | **Lark 群机器人** | [https://open.larksuite.com/](https://open.larksuite.com/document/client-docs/bot-v3/add-custom-bot)      | -    |              |
+| ✔ **荐** | **Bark**          | [https://day.app/2021/06/barkfaq/](https://day.app/2021/06/barkfaq/)                                      | -    | 仅支持 `iOS` |
+| ✔        | **Chanify**       | [https://www.chanify.net/](https://www.chanify.net/)                                                      | -    | 仅支持 `iOS` |
+| ✔        | **PushDeer**      | https://www.pushdeer.com/                                                                                 | -    |              |
 
-## 前置环境
+## 开发
+
+### 前置环境
 
 1. 使用 [**Rye**](https://rye-up.com/) 作为包管理工具
 
-## 单元测试
+### 开发
+
+1. 安装依赖包：
+
+```bash
+# 同步
+rye sync
+```
+
+2. 代码检测与格式化：
+
+```bash
+# 检测
+rye run check
+
+# 格式化
+rye run format
+```
+
+3. 单元测试：
 
 ```bash
 # rye test
