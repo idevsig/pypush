@@ -10,7 +10,6 @@ dependencies = [
     "lxml>=4.9.4",
 ]
 readme = "README.md"
-license ={ file = "LICENSE" }
 keywords = ["push", "notify", "dingtalk", "feishu", "lark", "bark", "chanify", "pushdeer", "pushplus", "showdoc", "xizhi"]
 requires-python = ">= 3.8"
 classifiers = [

@@ -2,13 +2,19 @@
 
 APP 推送通知。支持往 **钉钉群、飞书群、Lark 群、Bark、Chanify、PushDeer、PushPlus、Showdoc、息知** 推送消息。
 
+<a href="https://pypi.org/project/ipush" target="_blank">
+    <img src="https://img.shields.io/pypi/v/ipush.svg" alt="Package version">
+</a>
+
+<a href="https://pypi.org/project/ipush" target="_blank">
+    <img src="https://img.shields.io/pypi/pyversions/ipush.svg" alt="Supported Python versions">
+</a>
+
 ## 使用说明
 
 1. 安装依赖
 
-- https://pypi.org/project/ipush/
-
-```shell
+```bash
 pip install -U ipush
 ```
 
