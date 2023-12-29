@@ -2,7 +2,7 @@ import os
 
 import pytest
 
-from ipush.notify.chanify import Chanify
+from ipush import Chanify
 
 
 @pytest.fixture

@@ -2,7 +2,7 @@ import os
 
 import pytest
 
-from ipush.notify.xizhi import Xizhi
+from ipush import Xizhi
 
 
 @pytest.fixture

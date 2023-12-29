@@ -2,7 +2,7 @@ import os
 
 import pytest
 
-from ipush.notify.showdoc import Showdoc
+from ipush import Showdoc
 
 
 @pytest.fixture

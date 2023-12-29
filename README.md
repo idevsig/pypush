@@ -2,6 +2,8 @@
 
 APP 推送通知。支持往 **钉钉群、飞书群、Lark 群、Bark、Chanify、PushDeer、PushPlus、Showdoc、息知** 推送消息。
 
+---
+
 <a href="https://pypi.org/project/ipush" target="_blank">
     <img src="https://img.shields.io/pypi/v/ipush.svg" alt="Package version">
 </a>
@@ -21,7 +23,7 @@ pip install -U ipush
 2. 创建 `notify` 对象，并发送消息
 
 ```python
-from ipush.notify.dingtalk import Dingtalk
+from ipush import Dingtalk
 
 notify = Dingtalk("token", "secret")
 notify.send("ipush test")
@@ -41,6 +43,10 @@ notify.send("ipush test")
 | ✔        | **PushPlus**      | [https://www.pushplus.plus/](https://www.pushplus.plus/doc)                                               | -    |              |
 | ✔        | **Showdoc**       | [https://push.showdoc.com.cn/](https://www.showdoc.com.cn/push)                                           | -    |              |
 | ✔        | **息知**          | [https://xz.qqoq.net/](https://xz.qqoq.net/)                                                              | -    |              |
+
+| 状态     | **国外**平台 | 官网                                                                              | 文档 | 备注                                                                                                                                                 |
+| :------- | :----------- | :-------------------------------------------------------------------------------- | :--- | :--------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ✔ **荐** | **Telegram** | [https://core.telegram.org/bots/](https://core.telegram.org/bots/api#sendmessage) | -    | 创建[Bot](https://t.me/BotFather)后，将 Bot 添加至群组或频道，再添加[获取 ChatId 的机器人进群组](https://t.me/getmyid_bot)(可移除)，即可获得`ChatId` |
 
 ## 开发
 

@@ -2,7 +2,7 @@ import os
 
 import pytest
 
-from ipush.notify.bark import Bark
+from ipush import Bark
 
 
 @pytest.fixture

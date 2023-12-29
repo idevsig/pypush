@@ -2,7 +2,7 @@ import os
 
 import pytest
 
-from ipush.notify.lark import Lark
+from ipush import Lark
 
 
 @pytest.fixture

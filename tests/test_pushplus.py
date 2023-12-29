@@ -2,7 +2,7 @@ import os
 
 import pytest
 
-from ipush.notify.pushplus import PushPlus
+from ipush import PushPlus
 
 
 @pytest.fixture

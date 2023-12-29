@@ -2,7 +2,7 @@ import os
 
 import pytest
 
-from ipush.notify.feishu import Feishu
+from ipush import Feishu
 
 
 @pytest.fixture

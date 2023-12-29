@@ -2,7 +2,7 @@ import os
 
 import pytest
 
-from ipush.notify.dingtalk import Dingtalk
+from ipush import Dingtalk
 
 
 @pytest.fixture

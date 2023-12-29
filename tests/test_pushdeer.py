@@ -2,7 +2,7 @@ import os
 
 import pytest
 
-from ipush.notify.pushdeer import PushDeer
+from ipush import PushDeer
 
 
 @pytest.fixture

@@ -74,7 +74,7 @@ fix = true
 show-fixes = true
 show-source = true
 # line-length = 100
-ignore = ["E501"]
+ignore = ["E501","F401"]
 
 [tool.ruff.format]
 quote-style = "single"
