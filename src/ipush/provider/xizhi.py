@@ -1,29 +1,25 @@
 import json
 
 from ..utils.fetch import Fetch
-from .notify import Notify
+from ._provider import Provider
 
 
-class Bark(Notify):
+class Xizhi(Provider):
     """
-    Bark通知
+    Xizhi通知
     """
 
     def __init__(self, token=''):
         self.token = token
-        self.url = 'https://api.day.app'
 
     def _signature(self):
         pass
-
-    def seturl(self, url):
-        self.url = url
 
     def _geturl(self):
         """
         生成请求的 URL
         """
-        return f'{self.url}/push'
+        return f'https://xizhi.qqoq.net/{self.token}.send'
 
     def send(self, message, title=''):
         """
@@ -38,10 +34,13 @@ class Bark(Notify):
         req = Fetch()
         req.update_headers(headers)
 
+        if title == '':
+            title = message
+            message = ''
+
         data = {
-            'title': '' if title == '' else title,
-            'body': message,
-            'device_key': self.token,
+            'title': title,
+            'content': message,
         }
         data = json.dumps(data, indent=4)
         req.post(req_url, data=data.encode('utf-8'))

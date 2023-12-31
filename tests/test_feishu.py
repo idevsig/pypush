@@ -15,10 +15,10 @@ def access_token():
 @pytest.mark.skipif(
     not os.environ.get('FeishuToken'), reason='Feishu Token not provided'
 )
-def test_feishu(access_token):
+def test_feishu(access_token, message):
     token, secret = access_token
     notify = Feishu(token, secret)
-    res = notify.send('pypush test')
+    res = notify.send(message)
     assert res.status_code == 200
     json = res.json()
     assert json['code'] == 0

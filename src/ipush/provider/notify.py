@@ -1,32 +1,28 @@
 import json
 
 from ..utils.fetch import Fetch
-from .notify import Notify
+from ._provider import Provider
 
 
-class Telegram(Notify):
+class Notify(Provider):
     """
-    Telegram通知
+    Notify通知
     """
 
-    def __init__(self, token='', chatid=''):
+    def __init__(self, token='', user_id=''):
         self.token = token
-        self.chatid = chatid
-        self.url = 'https://api.telegram.org'
+        self.user_id = user_id
 
     def _signature(self):
         pass
 
-    def seturl(self, url):
-        self.url = url
-
-    def _geturl(self, uri='sendMessage'):
+    def _geturl(self):
         """
         生成请求的 URL
         """
-        return f'{self.url}/bot{self.token}/{uri}'
+        return 'https://notify.dev/api/v1/notify'
 
-    def send(self, message):
+    def send(self, message, title=''):
         """
         发送通知
         :param message: 消息内容
@@ -34,14 +30,16 @@ class Telegram(Notify):
         req_url = self._geturl()
 
         headers = {
-            'content-type': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': self.token,
         }
         req = Fetch()
         req.update_headers(headers)
 
         data = {
-            'chat_id': self.chatid,
-            'text': message,
+            'user_id': self.user_id,
+            'title': '新消息' if title == '' else title,
+            'body': message,
         }
         data = json.dumps(data, indent=4)
         req.post(req_url, data=data.encode('utf-8'))

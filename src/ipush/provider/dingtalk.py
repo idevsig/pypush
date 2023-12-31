@@ -3,12 +3,12 @@ import time
 
 from ..utils.fetch import Fetch
 from ..utils.helper import signature
-from .notify import Notify
+from ._provider import Provider
 
 
-class Feishu(Notify):
+class Dingtalk(Provider):
     """
-    飞书通知
+    钉钉通知
     """
 
     def __init__(self, token='', secret=''):
@@ -19,17 +19,18 @@ class Feishu(Notify):
         """
         签名
         """
-        timestamp = str(round(time.time()))
+        timestamp = str(round(time.time() * 1000))
         return (
             timestamp,
-            '' if self.secret == '' else signature(self.secret, timestamp, 1),
+            '' if self.secret == '' else signature(self.secret, timestamp, 0),
         )
 
-    def _geturl(self):
+    def _geturl(self, sign):
         """
         生成请求的 URL
+        :param sign: 签名
         """
-        return f'https://open.feishu.cn/open-apis/bot/v2/hook/{self.token}'
+        return f'https://oapi.dingtalk.com/robot/send?access_token={self.token}{sign}'
 
     def send(self, message):
         """
@@ -37,7 +38,9 @@ class Feishu(Notify):
         :param message: 消息内容
         """
         timestamp, sign = self._signature()
-        req_url = self._geturl()
+        req_url = self._geturl(
+            '' if self.secret == '' else f'&timestamp={timestamp}&sign={sign}'
+        )
 
         headers = {
             'content-type': 'application/json',
@@ -46,11 +49,9 @@ class Feishu(Notify):
         req.update_headers(headers)
 
         data = {
-            'timestamp': timestamp,
-            'sign': sign,
-            'msg_type': 'text',
-            'content': {
-                'text': message,
+            'msgtype': 'text',
+            'text': {
+                'content': message,
             },
         }
         data = json.dumps(data, indent=4)

@@ -107,3 +107,21 @@ notify.send("ipush test", "chat_id")
 notify.seturl("https://self-hosted")
 notify.send("ipush test custom url")
 ```
+
+- **Alertzy**
+
+```python
+from ipush import Alertzy
+
+notify = Alertzy("token")
+notify.send("ipush test", "title")
+```
+
+- **Notify**
+
+```python
+from ipush import Notify
+
+notify = Notify("token", "user_id")
+notify.send("ipush test", "title")
+```

@@ -1,17 +1,18 @@
 import json
 
 from ..utils.fetch import Fetch
-from .notify import Notify
+from ._provider import Provider
 
 
-class PushDeer(Notify):
+class Telegram(Provider):
     """
-    PushDeer通知
+    Telegram通知
     """
 
-    def __init__(self, token=''):
+    def __init__(self, token='', chatid=''):
         self.token = token
-        self.url = 'https://api2.pushdeer.com'
+        self.chatid = chatid
+        self.url = 'https://api.telegram.org'
 
     def _signature(self):
         pass
@@ -19,11 +20,11 @@ class PushDeer(Notify):
     def seturl(self, url):
         self.url = url
 
-    def _geturl(self):
+    def _geturl(self, uri='sendMessage'):
         """
         生成请求的 URL
         """
-        return f'{self.url}/message/push'
+        return f'{self.url}/bot{self.token}/{uri}'
 
     def send(self, message):
         """
@@ -39,8 +40,8 @@ class PushDeer(Notify):
         req.update_headers(headers)
 
         data = {
+            'chat_id': self.chatid,
             'text': message,
-            'pushkey': self.token,
         }
         data = json.dumps(data, indent=4)
         req.post(req_url, data=data.encode('utf-8'))

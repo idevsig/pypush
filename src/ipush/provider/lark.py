@@ -3,10 +3,10 @@ import time
 
 from ..utils.fetch import Fetch
 from ..utils.helper import signature
-from .notify import Notify
+from ._provider import Provider
 
 
-class Lark(Notify):
+class Lark(Provider):
     """
     Lark通知
     """

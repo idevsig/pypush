@@ -15,10 +15,10 @@ def access_token():
 @pytest.mark.skipif(
     not os.environ.get('PushDeerToken'), reason='PushDeer Token not provided'
 )
-def test_PushDeer(access_token):
+def test_PushDeer(access_token, message):
     token, _ = access_token
     notify = PushDeer(token)
-    res = notify.send('pypush test')
+    res = notify.send(message)
     assert res.status_code == 200
     json = res.json()
     assert json['code'] == 0
@@ -28,11 +28,11 @@ def test_PushDeer(access_token):
     not os.environ.get('PushDeerToken') or not os.environ.get('PushDeerCustomURL'),
     reason='PushDeer Token not provided',
 )
-def test_PushDeer_custom_url(access_token):
+def test_PushDeer_custom_url(access_token, custom_message):
     token, custom_url = access_token
     notify = PushDeer(token)
     notify.seturl(custom_url)
-    res = notify.send('pypush test custom url')
+    res = notify.send(custom_message)
     assert res.status_code == 200
     json = res.json()
     assert json['code'] == 0

@@ -15,10 +15,10 @@ def access_token():
 @pytest.mark.skipif(
     not os.environ.get('DingtalkToken'), reason='Dingtalk Token not provided'
 )
-def test_dintalk(access_token):
+def test_dintalk(access_token, message):
     token, secret = access_token
     notify = Dingtalk(token, secret)
-    res = notify.send('pypush test')
+    res = notify.send(message)
     assert res.status_code == 200
     json = res.json()
     assert json['errcode'] == 0

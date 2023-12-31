@@ -2,11 +2,11 @@ from abc import ABC
 from abc import abstractmethod
 
 """
-Notify 推送通知
+Provider 提供者
 """
 
 
-class Notify(ABC):
+class Provider(ABC):
     @abstractmethod
     def _signature(self):
         """

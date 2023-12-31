@@ -13,10 +13,10 @@ def access_token():
 
 
 @pytest.mark.skipif(not os.environ.get('LarkToken'), reason='Lark Token not provided')
-def test_lark(access_token):
+def test_lark(access_token, message):
     token, secret = access_token
     notify = Lark(token, secret)
-    res = notify.send('pypush test')
+    res = notify.send(message)
     assert res.status_code == 200
     json = res.json()
     assert json['code'] == 0

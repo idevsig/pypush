@@ -15,10 +15,10 @@ def access_token():
 @pytest.mark.skipif(
     not os.environ.get('ChanifyToken'), reason='Chanify Token not provided'
 )
-def test_chanify(access_token):
+def test_chanify(access_token, message):
     token, _ = access_token
     notify = Chanify(token)
-    res = notify.send('pypush test')
+    res = notify.send(message)
     assert res.status_code == 200
 
 
@@ -26,9 +26,9 @@ def test_chanify(access_token):
     not os.environ.get('ChanifyToken') or not os.environ.get('ChanifyCustomURL'),
     reason='Chanify Token not provided',
 )
-def test_chanify_custom_url(access_token):
+def test_chanify_custom_url(access_token, custom_message):
     token, custom_url = access_token
     notify = Chanify(token)
     notify.seturl(custom_url)
-    res = notify.send('pypush test custom url')
+    res = notify.send(custom_message)
     assert res.status_code == 200

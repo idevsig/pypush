@@ -1,12 +1,12 @@
 import json
 
 from ..utils.fetch import Fetch
-from .notify import Notify
+from ._provider import Provider
 
 
-class PushPlus(Notify):
+class Alertzy(Provider):
     """
-    PushPlus通知
+    Alertzy通知
     """
 
     def __init__(self, token=''):
@@ -19,7 +19,7 @@ class PushPlus(Notify):
         """
         生成请求的 URL
         """
-        return 'https://www.pushplus.plus/send'
+        return 'https://alertzy.app/send'
 
     def send(self, message, title=''):
         """
@@ -28,17 +28,12 @@ class PushPlus(Notify):
         """
         req_url = self._geturl()
 
-        headers = {
-            'content-type': 'application/json',
-        }
         req = Fetch()
-        req.update_headers(headers)
 
         data = {
+            'accountKey': self.token,
             'title': '新消息' if title == '' else title,
-            'content': message,
-            'token': self.token,
+            'message': message,
         }
-        data = json.dumps(data, indent=4)
-        req.post(req_url, data=data.encode('utf-8'))
+        req.post(req_url, data)
         return req.response

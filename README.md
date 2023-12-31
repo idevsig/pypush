@@ -1,6 +1,7 @@
 # ipush
 
-APP 推送通知。支持往 **钉钉群、飞书群、Lark 群、Bark、Chanify、PushDeer、PushPlus、Showdoc、息知** 推送消息。
+向 APP、微信平台推送通知。
+支持往 **Telegram、钉钉群、飞书群、Lark 群、Bark、Chanify、PushDeer、PushPlus、Showdoc、息知、Alertzy、Notify** 推送消息。
 
 ---
 
@@ -26,7 +27,7 @@ pip install -U ipush
 from ipush import Dingtalk
 
 notify = Dingtalk("token", "secret")
-notify.send("ipush test")
+notify.send("iPush test")
 ```
 
 ## 支持平台
@@ -47,6 +48,8 @@ notify.send("ipush test")
 | 状态     | **国外**平台 | 官网                                                                              | 文档 | 备注                                                                                                                                                 |
 | :------- | :----------- | :-------------------------------------------------------------------------------- | :--- | :--------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ✔ **荐** | **Telegram** | [https://core.telegram.org/bots/](https://core.telegram.org/bots/api#sendmessage) | -    | 创建[Bot](https://t.me/BotFather)后，将 Bot 添加至群组或频道，再添加[获取 ChatId 的机器人进群组](https://t.me/getmyid_bot)(可移除)，即可获得`ChatId` |
+| ✔        | **Alertzy**  | [https://alertzy.app/](https://alertzy.app/)                                      | -    |                                                                                                                                                      |
+| ✔        | **Notify**   | [https://notify.dev/](https://notify.dev/docs/quickstart)                         | -    | 安装手机 APP，复制设备 ID（`Settings -> Device ID`），输入到 [`Playground`](https://notify.dev/playground)，获取二维码，再使用手机 APP 扫描          |
 
 ## 开发
 

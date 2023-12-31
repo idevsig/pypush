@@ -14,10 +14,10 @@ def access_token():
 @pytest.mark.skipif(
     not os.environ.get('ShowdocToken'), reason='Showdoc Token not provided'
 )
-def test_showdoc(access_token):
+def test_showdoc(access_token, message):
     token = access_token
     notify = Showdoc(token)
-    res = notify.send('pypush test')
+    res = notify.send(message)
     assert res.status_code == 200
     json = res.json()
     assert json['error_code'] == 0
@@ -26,10 +26,10 @@ def test_showdoc(access_token):
 @pytest.mark.skipif(
     not os.environ.get('ShowdocToken'), reason='Showdoc Token not provided'
 )
-def test_showdoc_title(access_token):
+def test_showdoc_title(access_token, message, title):
     token = access_token
     notify = Showdoc(token)
-    res = notify.send('pypush test', 'ipush')
+    res = notify.send(message, title)
     assert res.status_code == 200
     json = res.json()
     assert json['error_code'] == 0

@@ -1,27 +1,31 @@
 import json
 
 from ..utils.fetch import Fetch
-from .notify import Notify
+from ._provider import Provider
 
 
-class Showdoc(Notify):
+class Chanify(Provider):
     """
-    Showdoc通知
+    Chanify通知
     """
 
     def __init__(self, token=''):
         self.token = token
+        self.url = 'https://api.chanify.net'
 
     def _signature(self):
         pass
+
+    def seturl(self, url):
+        self.url = url
 
     def _geturl(self):
         """
         生成请求的 URL
         """
-        return f'https://push.showdoc.com.cn/server/api/push/{self.token}'
+        return f'{self.url}/v1/sender/{self.token}'
 
-    def send(self, message, title=''):
+    def send(self, message):
         """
         发送通知
         :param message: 消息内容
@@ -35,8 +39,7 @@ class Showdoc(Notify):
         req.update_headers(headers)
 
         data = {
-            'title': '新消息' if title == '' else title,
-            'content': message,
+            'text': message,
         }
         data = json.dumps(data, indent=4)
         req.post(req_url, data=data.encode('utf-8'))
