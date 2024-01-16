@@ -1,6 +1,6 @@
 [project]
 name = "ipush"
-version = "0.4.0"
+version = "0.5.0"
 description = "向 APP、微信平台推送通知。支持 Telegram、钉钉群、飞书群、Lark 群、Bark 等平台。"
 authors = [
     { name = "Jetsung Chan", email = "jetsungchan@gmail.com" }
