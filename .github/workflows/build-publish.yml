@@ -17,7 +17,7 @@ jobs:
         shell: bash
         env:
           RYE_INSTALL_OPTION: "--yes"
-          RYE_VERSION: 0.16.0
+          RYE_VERSION: 0.17.0
         run: |
           curl -fSL https://rye-up.com/get | bash
           echo "$HOME/.rye/shims" >> $GITHUB_PATH

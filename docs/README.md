@@ -125,3 +125,12 @@ from ipush import Notify
 notify = Notify("token", "user_id")
 notify.send("ipush test", "title")
 ```
+
+- **Juhe**
+
+```python
+from ipush import Juhe
+
+notify = Juhe("token", "service_id")
+notify.send("ipush test", "title")
+```

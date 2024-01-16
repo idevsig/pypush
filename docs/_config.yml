@@ -1,0 +1,11 @@
+theme: jekyll-theme-cayman
+title: ipush
+description: 向 APP、微信平台推送通知。支持往 Telegram、钉钉群、飞书群、Lark 群、Bark、Chanify、PushDeer、PushPlus、Showdoc、息知、Alertzy、Notify 推送消息。
+encoding: UTF-8
+highlighter: rouge
+
+copyright:
+  year: 2024
+  name: Jetsung Chan
+
+timezone: Asia/Shanghai

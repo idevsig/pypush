@@ -3,6 +3,7 @@ from .provider.bark import Bark
 from .provider.chanify import Chanify
 from .provider.dingtalk import Dingtalk
 from .provider.feishu import Feishu
+from .provider.juhe import Juhe
 from .provider.lark import Lark
 from .provider.notify import Notify
 from .provider.pushdeer import PushDeer
