@@ -14,3 +14,8 @@ def message():
 @pytest.fixture
 def custom_message():
     return 'PyPush test custom url'
+
+
+@pytest.fixture
+def markdown_message():
+    return '[**PyPush**](https://git.jetsung.com/idev/pypush) test markdown'

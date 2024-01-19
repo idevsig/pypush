@@ -29,10 +29,23 @@ def test_juhe(access_token, message):
     not os.environ.get('JuheToken') or not os.environ.get('JuheServiceID'),
     reason='Juhe Token not provided',
 )
-def test_juhe_title(access_token, title, message):
+def test_juhe_title(access_token, message, title):
     token, service_id = access_token
     notify = Juhe(token, service_id)
     res = notify.send(message, title)
+    assert res.status_code == 200
+    json = res.json()
+    assert json['code'] == 200
+
+
+@pytest.mark.skipif(
+    not os.environ.get('JuheToken') or not os.environ.get('JuheServiceID'),
+    reason='Juhe Token not provided',
+)
+def test_juhe_markdown(access_token, markdown_message, title):
+    token, service_id = access_token
+    notify = Juhe(token, service_id)
+    res = notify.setdoctype('markdown').send(markdown_message, title)
     assert res.status_code == 200
     json = res.json()
     assert json['code'] == 200

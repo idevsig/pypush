@@ -32,19 +32,20 @@ notify.send("iPush test")
 
 ## 支持平台
 
-| 状态     | **国内**平台      | 官网                                                                                                      | 备注                                                                             |
-| :------- | :---------------- | :-------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------- |
-| ✔ **荐** | **钉钉群机器人**  | [https://open.dingtalk.com/](https://open.dingtalk.com/document/robots/customize-robot-security-settings) |
-| ✔ **荐** | **飞书群机器人**  | [https://open.feishu.cn/](https://open.feishu.cn/document/client-docs/bot-v3/add-custom-bot)              |                                                                                  |
-| ✔ **荐** | **Lark 群机器人** | [https://open.larksuite.com/](https://open.larksuite.com/document/client-docs/bot-v3/add-custom-bot)      |                                                                                  |
-| ✔ **荐** | **Bark**          | [https://day.app/2021/06/barkfaq/](https://day.app/2021/06/barkfaq/)                                      | 仅支持 `iOS`                                                                     |
-| ✔        | **Chanify**       | [https://www.chanify.net/](https://www.chanify.net/)                                                      | 仅支持 `iOS`                                                                     |
-| ✔        | **PushDeer**      | https://www.pushdeer.com/                                                                                 |                                                                                  |
-| //       | //                | **基于微信公众号**                                                                                        | \\\\                                                                             |
-| ✔        | **PushPlus**      | [https://www.pushplus.plus/](https://www.pushplus.plus/doc)                                               |                                                                                  |
-| ✔        | **Showdoc**       | [https://push.showdoc.com.cn/](https://www.showdoc.com.cn/push)                                           |                                                                                  |
-| ✔        | **息知**          | [https://xz.qqoq.net/](https://xz.qqoq.net/)                                                              |                                                                                  |
-| ✔        | **聚合云推**      | [https://tui.juhe.cn/](https://tui.juhe.cn/docs)                                                          | 聚合推送。支持 `邮箱`、`微信公众号`、`钉钉机器人`、`WebHook`、`企业微信`、`Bark` |
+| 状态     | **国内**平台         | 官网                                                                                                             | 备注                                                                             |
+| :------- | :------------------- | :--------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------- |
+| ✔ **荐** | **钉钉群机器人**     | [https://open.dingtalk.com/](https://open.dingtalk.com/document/robots/customize-robot-security-settings)        |
+| ✔ **荐** | **飞书群机器人**     | [https://open.feishu.cn/](https://open.feishu.cn/document/client-docs/bot-v3/add-custom-bot)                     |                                                                                  |
+| ✔ **荐** | **Lark 群机器人**    | [https://open.larksuite.com/](https://open.larksuite.com/document/client-docs/bot-v3/add-custom-bot)             |                                                                                  |
+| ✔ **荐** | **Bark**             | [https://day.app/2021/06/barkfaq/](https://day.app/2021/06/barkfaq/)                                             | 仅支持 `iOS`                                                                     |
+| ✔        | **Chanify**          | [https://www.chanify.net/](https://www.chanify.net/)                                                             | 仅支持 `iOS`                                                                     |
+| ✔        | **PushDeer**         | https://www.pushdeer.com/                                                                                        |                                                                                  |
+| ✔ **荐** | **企业微信群机器人** | [https://developer.work.weixin.qq.com](https://developer.work.weixin.qq.com/document/path/91770?notreplace=true) |                                                                                  |
+| //       | //                   | **基于微信公众号**                                                                                               | \\\\                                                                             |
+| ✔        | **PushPlus**         | [https://www.pushplus.plus/](https://www.pushplus.plus/doc)                                                      |                                                                                  |
+| ✔        | **Showdoc**          | [https://push.showdoc.com.cn/](https://www.showdoc.com.cn/push)                                                  |                                                                                  |
+| ✔        | **息知**             | [https://xz.qqoq.net/](https://xz.qqoq.net/)                                                                     |                                                                                  |
+| ✔        | **聚合云推**         | [https://tui.juhe.cn/](https://tui.juhe.cn/docs)                                                                 | 聚合推送。支持 `邮箱`、`微信公众号`、`钉钉机器人`、`WebHook`、`企业微信`、`Bark` |
 
 | 状态     | **国外**平台 | 官网                                                                              | 备注                                                                                                                                                 |
 | :------- | :----------- | :-------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------- |

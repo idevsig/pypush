@@ -10,4 +10,5 @@ from .provider.pushdeer import PushDeer
 from .provider.pushplus import PushPlus
 from .provider.showdoc import Showdoc
 from .provider.telegram import Telegram
+from .provider.wecom import WeCom
 from .provider.xizhi import Xizhi

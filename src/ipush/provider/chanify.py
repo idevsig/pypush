@@ -16,14 +16,14 @@ class Chanify(Provider):
     def _signature(self):
         pass
 
-    def seturl(self, url):
-        self.url = url
-
     def _geturl(self):
         """
         生成请求的 URL
         """
         return f'{self.url}/v1/sender/{self.token}'
+
+    def seturl(self, url):
+        self.url = url
 
     def send(self, message):
         """

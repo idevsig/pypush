@@ -10,6 +10,7 @@ class Juhe(Provider):
     def __init__(self, token='', service_id=''):
         self.token = token
         self.service_id = service_id
+        self.doc_type = 'txt'
 
     def _signature(self):
         pass
@@ -19,6 +20,12 @@ class Juhe(Provider):
         生成请求的 URL
         """
         return 'https://tui.juhe.cn/api/plus/pushApi'
+
+    def setdoctype(self, doc_type):
+        self.doc_type = (
+            doc_type if doc_type in ['html', 'markdown', 'txt', 'json'] else 'txt'
+        )
+        return self
 
     def send(self, message, title=''):
         """
@@ -34,6 +41,7 @@ class Juhe(Provider):
             'service_id': self.service_id,
             'title': '新消息' if title == '' else title,
             'content': message,
+            'doc_type': self.doc_type,
         }
         req.post(req_url, data)
         return req.response

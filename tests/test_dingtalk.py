@@ -22,3 +22,15 @@ def test_dintalk(access_token, message):
     assert res.status_code == 200
     json = res.json()
     assert json['errcode'] == 0
+
+
+@pytest.mark.skipif(
+    not os.environ.get('DingtalkToken'), reason='Dingtalk Token not provided'
+)
+def test_dintalk_markdown(access_token, markdown_message, title):
+    token, secret = access_token
+    notify = Dingtalk(token, secret)
+    res = notify.setmsgtype('markdown').send(markdown_message, title)
+    assert res.status_code == 200
+    json = res.json()
+    assert json['errcode'] == 0

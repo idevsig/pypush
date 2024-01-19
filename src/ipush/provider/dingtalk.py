@@ -14,6 +14,7 @@ class Dingtalk(Provider):
     def __init__(self, token='', secret=''):
         self.token = token
         self.secret = secret
+        self.msgtype = 'text'
 
     def _signature(self):
         """
@@ -32,7 +33,15 @@ class Dingtalk(Provider):
         """
         return f'https://oapi.dingtalk.com/robot/send?access_token={self.token}{sign}'
 
-    def send(self, message):
+    def setmsgtype(self, msgtype):
+        """
+        设置消息类型
+        :param msgtype: 消息类型
+        """
+        self.msgtype = msgtype if msgtype in ['text', 'markdown'] else 'text'
+        return self
+
+    def send(self, message, title=''):
         """
         发送通知
         :param message: 消息内容
@@ -49,9 +58,10 @@ class Dingtalk(Provider):
         req.update_headers(headers)
 
         data = {
-            'msgtype': 'text',
-            'text': {
-                'content': message,
+            'msgtype': self.msgtype,
+            self.msgtype: {
+                'title': '新消息' if title == '' else title,
+                'content' if self.msgtype != 'markdown' else 'text': message,
             },
         }
         data = json.dumps(data, indent=4)

@@ -1,7 +1,7 @@
 [project]
 name = "ipush"
-version = "0.5.0"
-description = "向 APP、微信平台推送通知。支持 Telegram、钉钉群、飞书群、Lark 群、Bark 等平台。"
+version = "0.6.0"
+description = "向 APP、微信平台推送通知。支持 Telegram、钉钉群、飞书群、企业微信群、Lark 群、Bark 等平台。"
 authors = [
     { name = "Jetsung Chan", email = "jetsungchan@gmail.com" }
 ]
@@ -10,7 +10,7 @@ dependencies = [
     "lxml>=4.9.4",
 ]
 readme = "README.md"
-keywords = ["push", "notify", "telegram", "dingtalk", "feishu", "lark", "bark", "chanify", "pushdeer", "pushplus", "showdoc", "xizhi"]
+keywords = ["push", "notify", "telegram", "dingtalk", "feishu", "wechat", "lark", "bark", "chanify", "pushdeer", "pushplus", "showdoc", "xizhi"]
 requires-python = ">= 3.8"
 classifiers = [
     'Development Status :: 4 - Beta',

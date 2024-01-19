@@ -15,8 +15,10 @@ pip install ipush
 ```python
 from ipush import Dingtalk
 
-notify = Dingtalk("token", "secret")
-notify.send("ipush test")
+notify = Dingtalk('token', "secret")
+notify.send('ipush test')
+# or 'text', 'markdown'
+notify.settype('markdown').send('**ipush** markdown test')
 ```
 
 - **飞书群**
@@ -24,8 +26,8 @@ notify.send("ipush test")
 ```python
 from ipush import Feishu
 
-notify = Feishu("token", "secret")
-notify.send("ipush test")
+notify = Feishu('token', "secret")
+notify.send('ipush test')
 ```
 
 - **Lark 群**
@@ -33,8 +35,8 @@ notify.send("ipush test")
 ```python
 from ipush import Lark
 
-notify = Lark("token", "secret")
-notify.send("ipush test")
+notify = Lark('token', "secret")
+notify.send('ipush test')
 ```
 
 - **Bark**
@@ -42,10 +44,10 @@ notify.send("ipush test")
 ```python
 from ipush import Bark
 
-notify = Bark("token")
-notify.send("ipush test", "title")
-notify.seturl("https://self-hosted")
-notify.send("ipush test custom url")
+notify = Bark('token')
+notify.send('ipush test', 'title')
+notify.seturl('https://self-hosted')
+notify.send('ipush test custom url')
 ```
 
 - **Chanify**
@@ -53,10 +55,10 @@ notify.send("ipush test custom url")
 ```python
 from ipush import Chanify
 
-notify = Chanify("token")
-notify.send("ipush test")
-notify.seturl("https://self-hosted")
-notify.send("ipush test custom url")
+notify = Chanify('token')
+notify.send('ipush test')
+notify.seturl('https://self-hosted')
+notify.send('ipush test custom url')
 ```
 
 - **PushDeer**
@@ -64,10 +66,12 @@ notify.send("ipush test custom url")
 ```python
 from ipush import PushDeer
 
-notify = PushDeer("token")
-notify.send("ipush test")
-notify.seturl("https://self-hosted")
-notify.send("ipush test custom url")
+notify = PushDeer('token')
+notify.send('ipush test')
+notify.seturl('https://self-hosted')
+notify.send('ipush test custom url')
+# or 'text', 'markdown'
+notify.settype('text').send('ipush test')
 ```
 
 - **PushPlus**
@@ -75,8 +79,10 @@ notify.send("ipush test custom url")
 ```python
 from ipush import PushPlus
 
-notify = PushPlus("token")
-notify.send("ipush test", "title")
+notify = PushPlus('token')
+notify.send('ipush test', 'title')
+# or 'html', 'markdown', 'txt', 'json'
+notify.settemplate('markdown').send('**ipush** markdown test')
 ```
 
 - **Showdoc**
@@ -84,8 +90,8 @@ notify.send("ipush test", "title")
 ```python
 from ipush import Showdoc
 
-notify = Showdoc("token")
-notify.send("ipush test", "title")
+notify = Showdoc('token')
+notify.send('ipush test', 'title')
 ```
 
 - **Xizhi**
@@ -93,8 +99,8 @@ notify.send("ipush test", "title")
 ```python
 from ipush import Xizhi
 
-notify = Xizhi("token")
-notify.send("ipush test", "title")
+notify = Xizhi('token')
+notify.send('ipush test', 'title')
 ```
 
 - **Telegram**
@@ -102,10 +108,10 @@ notify.send("ipush test", "title")
 ```python
 from ipush import Telegram
 
-notify = Telegram("token")
-notify.send("ipush test", "chat_id")
-notify.seturl("https://self-hosted")
-notify.send("ipush test custom url")
+notify = Telegram('token')
+notify.send('ipush test', 'chat_id')
+notify.seturl('https://self-hosted')
+notify.send('ipush test custom url')
 ```
 
 - **Alertzy**
@@ -113,8 +119,8 @@ notify.send("ipush test custom url")
 ```python
 from ipush import Alertzy
 
-notify = Alertzy("token")
-notify.send("ipush test", "title")
+notify = Alertzy('token')
+notify.send('ipush test', 'title')
 ```
 
 - **Notify**
@@ -122,8 +128,8 @@ notify.send("ipush test", "title")
 ```python
 from ipush import Notify
 
-notify = Notify("token", "user_id")
-notify.send("ipush test", "title")
+notify = Notify('token', "user_id")
+notify.send('ipush test', 'title')
 ```
 
 - **Juhe**
@@ -131,6 +137,19 @@ notify.send("ipush test", "title")
 ```python
 from ipush import Juhe
 
-notify = Juhe("token", "service_id")
-notify.send("ipush test", "title")
+notify = Juhe('token', 'service_id')
+notify.send('ipush test', 'title')
+# or 'html', 'markdown', 'txt', 'json'
+notify.setdoctype('markdown').send('**ipush** markdown test')
+```
+
+- **WeCom**
+
+```python
+from ipush import WeCom
+
+notify = WeCom('token')
+notify.send('ipush test', 'title')
+# or 'text', 'markdown'
+notify.setmsgtype('markdown').send('**ipush** markdown test')
 ```

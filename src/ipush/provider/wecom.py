@@ -1,17 +1,18 @@
 import json
+import time
 
 from ..utils.fetch import Fetch
 from ._provider import Provider
 
 
-class PushPlus(Provider):
+class WeCom(Provider):
     """
-    PushPlus通知
+    企业微信通知
     """
 
     def __init__(self, token=''):
         self.token = token
-        self.template = 'html'
+        self.msgtype = 'text'
 
     def _signature(self):
         pass
@@ -19,16 +20,19 @@ class PushPlus(Provider):
     def _geturl(self):
         """
         生成请求的 URL
+        :param sign: 签名
         """
-        return 'https://www.pushplus.plus/send'
+        return f'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key={self.token}'
 
-    def settemplate(self, template):
-        self.template = (
-            template if template in ['html', 'markdown', 'txt', 'json'] else 'html'
-        )
+    def setmsgtype(self, msgtype):
+        """
+        设置消息类型
+        :param msgtype: 消息类型
+        """
+        self.msgtype = msgtype if msgtype in ['text', 'markdown'] else 'text'
         return self
 
-    def send(self, message, title=''):
+    def send(self, message):
         """
         发送通知
         :param message: 消息内容
@@ -42,10 +46,10 @@ class PushPlus(Provider):
         req.update_headers(headers)
 
         data = {
-            'token': self.token,
-            'title': '新消息' if title == '' else title,
-            'content': message,
-            'template': self.template,
+            'msgtype': self.msgtype,
+            self.msgtype: {
+                'content': message,
+            },
         }
         data = json.dumps(data, indent=4)
         req.post(req_url, data=data.encode('utf-8'))

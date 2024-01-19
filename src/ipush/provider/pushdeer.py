@@ -11,19 +11,25 @@ class PushDeer(Provider):
 
     def __init__(self, token=''):
         self.token = token
+        self.type = 'markdown'
         self.url = 'https://api2.pushdeer.com'
 
     def _signature(self):
         pass
-
-    def seturl(self, url):
-        self.url = url
 
     def _geturl(self):
         """
         生成请求的 URL
         """
         return f'{self.url}/message/push'
+
+    def seturl(self, url):
+        self.url = url
+        return self
+
+    def settype(self, type):
+        self.type = type if type in ['text', 'markdown'] else 'markdown'
+        return self
 
     def send(self, message):
         """
