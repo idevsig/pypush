@@ -24,9 +24,9 @@ pip install -U ipush
 2. 创建 `notify` 对象，并发送消息
 
 ```python
-from ipush import Dingtalk
+from ipush import Dingtalk as Channel
 
-notify = Dingtalk("token", "secret")
+notify = Channel("token", "secret")
 notify.send("iPush test")
 ```
 
@@ -95,4 +95,5 @@ python -m pytest -s
 
 - https://git.jetsung.com/idev/pypush
 - https://framagit.org/idev/pypush
+- https://gitcode.com/idev/pypush
 - https://github.com/idevsig/pypush
