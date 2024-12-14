@@ -5,11 +5,20 @@
 #   pre: false
 #   features: []
 #   all-features: false
+#   with-sources: false
+#   generate-hashes: false
+#   universal: false
 
 -e file:.
 certifi==2023.11.17
+    # via requests
 charset-normalizer==3.3.2
+    # via requests
 idna==3.6
-lxml==4.9.4
+    # via requests
+lxml==5.3.0
+    # via ipush
 requests==2.31.0
+    # via ipush
 urllib3==2.1.0
+    # via requests
