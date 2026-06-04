@@ -1,5 +1,3 @@
-import json
-
 from ..utils.fetch import Fetch
 from ._provider import Provider
 

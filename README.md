@@ -78,10 +78,11 @@ uv sync
 2. 代码检测与格式化：
 
 ```bash
-# 检测
-uv run ruff check . --fix
+# 使用 prek（推荐）
+prek run -a
 
-# 格式化
+# 或使用 ruff
+uv run ruff check . --fix
 uv run ruff format .
 ```
 
@@ -97,5 +98,4 @@ uv run python -m pytest -s
 
 ## 仓库镜像
 
-[MyCode](https://git.jetsung.com/jetsung/pypush) ● [AtomGit](https://atomgit.com/jetsung/pypush) ● [GitHub](https://github.com/jetsung/pypush)
-
+[MyCode](https://git.jetsung.com/idev/pypush) ● [AtomGit](https://atomgit.com/idev/pypush) ● [GitHub](https://github.com/idevsig/pypush)
