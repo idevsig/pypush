@@ -18,7 +18,14 @@
 1. 安装依赖
 
 ```bash
+# pip
 pip install -U ipush
+
+# uv
+uv add ipush
+
+# 从 GitHub 安装
+uv add git+https://github.com/idevsig/pypush.git
 ```
 
 2. 创建 `notify` 对象，并发送消息
@@ -57,7 +64,7 @@ notify.send("iPush test")
 
 ### 1. 前置开发环境
 
-1. 使用 [**Rye**](https://rye-up.com/) 作为包管理工具
+1. 使用 [**uv**](https://docs.astral.sh/uv/) 作为包管理工具
 
 ### 2. 开发流程
 
@@ -65,35 +72,30 @@ notify.send("iPush test")
 
 ```bash
 # 同步
-rye sync
+uv sync
 ```
 
 2. 代码检测与格式化：
 
 ```bash
 # 检测
-rye run check
+uv run ruff check . --fix
 
 # 格式化
-rye run format
+uv run ruff format .
 ```
 
 3. 单元测试：
 
 ```bash
-# rye test
-rye run tests
-
 # pytest
-python -m pytest
+uv run python -m pytest
 
 # 打印测试报告
-python -m pytest -s
+uv run python -m pytest -s
 ```
 
 ## 仓库镜像
 
-- https://git.jetsung.com/idev/pypush
-- https://framagit.org/idev/pypush
-- https://gitcode.com/idev/pypush
-- https://github.com/idevsig/pypush
+[MyCode](https://git.jetsung.com/jetsung/pypush) ● [AtomGit](https://atomgit.com/jetsung/pypush) ● [GitHub](https://github.com/jetsung/pypush)
+
